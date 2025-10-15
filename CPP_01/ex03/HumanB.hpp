@@ -1,3 +1,4 @@
+// HumanB.hpp
 #ifndef HUMANB_H
 #define HUMANB_H
 
@@ -9,7 +10,7 @@ class HumanB {
         std::string name;
         Weapon      *weapon;
     public:
-        HumanB(std::string n);
+        HumanB(const std::string &n);
         void    setWeapon(Weapon &w);
         void    attack();
 };

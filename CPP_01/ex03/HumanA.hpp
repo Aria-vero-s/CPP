@@ -1,3 +1,4 @@
+// HumanA.hpp
 #ifndef HUMANA_H
 #define HUMANA_H
 
@@ -9,7 +10,7 @@ class HumanA {
         std::string name;
         Weapon  &weapon;
     public:
-        HumanA(std::string n, Weapon &w);
+        HumanA(const std::string &n, Weapon &w);
         void    attack();
 };
 
