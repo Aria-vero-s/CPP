@@ -1,53 +1,5 @@
 #include "File.hpp"
 
-// #include <string>
-// #include <fstream>
-// #include <iostream>
-
-// #define RESET   "\033[0m"
-// #define RED     "\033[31m"
-// #define MAGENTA "\033[35m"
-// #define CYAN    "\033[36m"
-// #define BOLD    "\033[1m"
-
-// class File {
-//     private:
-//         std::string fileName;
-//         std::string s1;
-//         std::string s2;
-//         std::string fileContent;
-//     public:
-//         File(std::string filename, std::string s1, std::string s2) {
-//             setFileName(filename);
-//             setS1(s1);
-//             setS2(s2);
-//         }
-//         void setFileName(std::string newFileName) {
-//             fileName = newFileName;
-//         }
-//         void setS1(std::string newS1) {
-//             s1 = newS1;
-//         }
-//         void setS2(std::string newS2) {
-//             s2 = newS2;
-//         }
-//         void setFileContent(std::string newFileContent) {
-//             fileContent = newFileContent;
-//         }
-//         std::string getFileName() {
-//             return (fileName);
-//         }
-//         std::string getS1() {
-//             return (s1);
-//         }
-//         std::string getS2() {
-//             return (s2);
-//         }
-//         std::string getFileContent() {
-//             return (fileContent);
-//         }
-// };
-
 void replaceS1WithS2(File &obj) {
     std::string fileContent = obj.getFileContent();
     std::string s1 = obj.getS1();
