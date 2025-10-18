@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 int main(int argc, char **argv) {
   int i;
@@ -18,7 +19,7 @@ int main(int argc, char **argv) {
     {
       c = argv[i][j];
       if (c >= 'a' && c <= 'z')
-        c = c - 32;
+        c = toupper(c);
       std::cout << c;
       j++;
     }
