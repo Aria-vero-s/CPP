@@ -5,6 +5,7 @@
 
 class Fixed {
 private:
+    const int  some_const_int;
 	int rawBits;
 	static const int fractionalBits;
 
