@@ -2,21 +2,25 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
-private:
-    const int  some_const_int;
-	int rawBits;
-	static const int fractionalBits;
-
 public:
 	Fixed();
 	Fixed(const Fixed &other);
-	Fixed &operator=(const Fixed &other);
+	Fixed& operator=(const Fixed &other);
 	~Fixed();
-
+	Fixed(const int n);
+	Fixed(const float f);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+	float toFloat(void) const;
+	int	toInt(void) const;
+private:
+	int value;
+	static const int bits = 8;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& f);
 
 #endif
