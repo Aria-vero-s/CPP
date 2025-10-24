@@ -31,7 +31,6 @@ float Fixed::toFloat(void) const {
 int Fixed::toInt(void) const {
 	return value >> bits;
 }
-Fixed const d(b);
 // insertion operator prints the floating-point representation
 std::ostream& operator<<(std::ostream& os, const Fixed& f) {
 	os << f.toFloat();
