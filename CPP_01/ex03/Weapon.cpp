@@ -9,4 +9,4 @@ void    Weapon::setType(const std::string &t) {
 }
 const std::string  &Weapon::getType() const {
     return(type);
-};
+}

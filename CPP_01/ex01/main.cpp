@@ -8,12 +8,6 @@ int main() {
     N = 3;
     i = 0;
     ptr = zombieHorde(N, "Foo");
-
-    while (i < N) {
-        ptr[i].announce();
-        i++;
-    }
-
     delete[] ptr;
     return (0);
 }

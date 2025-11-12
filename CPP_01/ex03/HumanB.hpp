@@ -2,7 +2,6 @@
 #ifndef HUMANB_H
 #define HUMANB_H
 
-#include <iostream>
 #include "Weapon.hpp"
 
 class HumanB {
@@ -12,7 +11,8 @@ class HumanB {
     public:
         HumanB(const std::string &n);
         void    setWeapon(Weapon &w);
-        void    attack();
+        void    attack() const;
+        const std::string &getName() const;
 };
 
 #endif

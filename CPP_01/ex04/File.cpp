@@ -1,31 +1,40 @@
 #include "File.hpp"
 
-File::File(std::string filename, std::string s1, std::string s2) {
-    setFileName(filename);
-    setS1(s1);
-    setS2(s2);
+File::File(const std::string &filename, const std::string &s1, const std::string &s2)
+{
+	setFileName(filename);
+	setS1(s1);
+	setS2(s2);
 }
-void File::setFileName(std::string newFileName) {
-    fileName = newFileName;
+void File::setFileName(const std::string &newFileName)
+{
+	fileName = newFileName;
 }
-void File::setS1(std::string newS1) {
-    s1 = newS1;
+void File::setS1(const std::string &newS1)
+{
+	s1 = newS1;
 }
-void File::setS2(std::string newS2) {
-    s2 = newS2;
+void File::setS2(const std::string &newS2)
+{
+	s2 = newS2;
 }
-void File::setFileContent(std::string newFileContent) {
-    fileContent = newFileContent;
+void File::setFileContent(const std::string &newFileContent)
+{
+	fileContent = newFileContent;
 }
-std::string File::getFileName() {
-    return (fileName);
+const std::string &File::getFileName() const
+{
+	return (fileName);
 }
-std::string File::getS1() {
-    return (s1);
+const std::string &File::getS1() const
+{
+	return (s1);
 }
-std::string File::getS2() {
-    return (s2);
+const std::string &File::getS2() const
+{
+	return (s2);
 }
-std::string File::getFileContent() {
-    return (fileContent);
+const std::string &File::getFileContent() const
+{
+	return (fileContent);
 }
