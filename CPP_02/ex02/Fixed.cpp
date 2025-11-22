@@ -14,8 +14,7 @@ Fixed::~Fixed() {}
 
 Fixed::Fixed(const int n) : _fix(n << _bit) {}
 
-Fixed::Fixed(const float f) :
-	_fix(static_cast<int>(roundf(f * (1 << _bit)))) {}
+Fixed::Fixed(const float f) : _fix(static_cast<int>(roundf(f * (1 << _bit)))) {}
 
 int Fixed::getRawBits(void) const {
 	return _fix;
@@ -53,6 +52,8 @@ Fixed Fixed::operator*(const Fixed &other) const {
 }
 
 Fixed Fixed::operator/(const Fixed &other) const {
+	if (other._fix == 0)
+		return Fixed(0);
 	Fixed res;
 	long tmp = (static_cast<long>(this->_fix) << _bit) / static_cast<long>(other._fix);
 	res._fix = static_cast<int>(tmp);
