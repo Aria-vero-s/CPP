@@ -1,5 +1,9 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie() {
+    std::cout << "Default Constructor" << std::endl;
+}
+
 void    Zombie::announce() {
     std::cout << "Zombie: " << name << std::endl;
 }

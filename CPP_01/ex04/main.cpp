@@ -28,12 +28,12 @@ void replaceS1WithS2(File &obj)
 
 void setNewFileName(File &obj)
 {
-    size_t i = 0;
+    int i = 0;
     std::string NewFileName;
     const std::string &OriginalFileName = obj.getFileName();
-    size_t len = (OriginalFileName.length());
+    int len = static_cast<int>(OriginalFileName.length());
 
-    size_t lastDot = -1;
+    int lastDot = -1;
     i = len - 1;
     while (i >= 0)
     {
@@ -48,7 +48,7 @@ void setNewFileName(File &obj)
         obj.setFileName(OriginalFileName + ".replace");
     else
     {
-        size_t j = 0;
+        int j = 0;
         while (j < lastDot)
         {
             NewFileName += OriginalFileName[j];

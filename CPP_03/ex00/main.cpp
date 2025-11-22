@@ -26,5 +26,4 @@ int main (){
 	robot1.attack("");
 
 	return 0;
-
 }

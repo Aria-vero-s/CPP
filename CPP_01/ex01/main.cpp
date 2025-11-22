@@ -8,6 +8,7 @@ int main() {
     N = 3;
     i = 0;
     ptr = zombieHorde(N, "Foo");
+    //ptr = NULL;
     delete[] ptr;
     return (0);
 }
