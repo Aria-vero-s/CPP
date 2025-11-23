@@ -1,8 +1,13 @@
 #ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-#include <iostream>
-#include <climits>
+# include <iostream>
+# include <climits>
+
+# define RESET   "\033[0m"
+# define RED     "\033[31m"
+# define MAGENTA "\033[35m"
+# define CYAN    "\033[36m"
 
 class ClapTrap{
 	protected:

@@ -87,19 +87,31 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed& Fixed::min(Fixed &a, Fixed &b) {
-	return (a._fix < b._fix) ? a : b;
+	if (a._fix < b._fix)
+		return a;
+	else
+		return b;
 }
 
 const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
-	return (a._fix < b._fix) ? a : b;
+	if (a._fix < b._fix)
+		return a;
+	else
+		return b;
 }
 
 Fixed& Fixed::max(Fixed &a, Fixed &b) {
-	return (a._fix > b._fix) ? a : b;
+	if (a._fix > b._fix)
+		return a;
+	else
+		return b;
 }
 
 const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
-	return (a._fix > b._fix) ? a : b;
+	if (a._fix > b._fix)
+		return a;
+	else
+		return b;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f) {

@@ -1,19 +1,19 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _name("default"), _hitPoint(10), _energyPoint(10), _attackDamage(0), _maxHitPoint(_hitPoint){
-	std::cout << "default constructor of :" << this << std::endl;
+	std::cout << "default constructor of :" << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0), _maxHitPoint(_hitPoint){
-	std::cout << "constructor of :" << this << std::endl;
+	std::cout << "constructor of :" << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hit, int energy, int attack, int maxHit) : _name(name), _hitPoint(hit), _energyPoint(energy), _attackDamage(attack), _maxHitPoint(maxHit){
-	std::cout << "[ClapTrap] param constructor of :" << this << std::endl;
+	std::cout << "[ClapTrap] param constructor of :" << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name),  _hitPoint(other._hitPoint), _energyPoint(other._energyPoint), _attackDamage(other._attackDamage), _maxHitPoint(other._maxHitPoint){
-	std::cout << this << " copy constructor of : " << &other << std::endl;
+	std::cout << _name << " copy constructor of : " << &other << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other){
@@ -28,7 +28,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "destructor of :" << this << std::endl;
+	std::cout << "destructor of :" << _name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target){
