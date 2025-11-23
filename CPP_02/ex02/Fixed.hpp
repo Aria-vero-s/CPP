@@ -46,7 +46,6 @@ public:
 private:
 	int _fix;
 	static const int _bit = 8;
-
 	Fixed(int raw, bool rawFlag);
 };
 
