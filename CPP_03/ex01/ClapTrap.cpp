@@ -70,7 +70,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		}
 		else {
 			this->_hitPoint = this->_maxHitPoint;
-			std::cout << this->_name << " regained " << this->_maxHitPoint << " hitPoint. Current hitPoint: " << this->_hitPoint << std::endl;
+			std::cout << this->_name << " regained max hitPoints. Current hitPoint: " << this->_hitPoint << std::endl;
 		}
 
 	}

@@ -1,19 +1,19 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _name("default"), _hitPoint(10), _energyPoint(10), _attackDamage(0), _maxHitPoint(_hitPoint){
-	std::cout << "default constructor of :" << this << std::endl;
+	std::cout << "default constructor of :" << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0), _maxHitPoint(_hitPoint){
-	std::cout << "constructor of :" << this << std::endl;
+	std::cout << "constructor of : " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name),  _hitPoint(other._hitPoint), _energyPoint(other._energyPoint), _attackDamage(other._attackDamage), _maxHitPoint(other._maxHitPoint){
-	std::cout << this << " copy constructor of : " << &other << std::endl;
+	std::cout << "copy constructor of : " << other._name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
-	std::cout << this << " copy assignement operator of :" << &other << std::endl;
+	std::cout << _name << " copy assignement operator of :" << &other << std::endl;
 	if (this != &other){
 		_name = other._name;
 		_hitPoint = other._hitPoint;
@@ -23,8 +23,8 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 	return *this;
 }
 
-ClapTrap::~ClapTrap(){
-	std::cout << "destructor of :" << this << std::endl;
+ClapTrap::~ClapTrap() {
+	std::cout << "destructor of :" << _name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target){
@@ -66,7 +66,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		}
 		else {
 			this->_hitPoint = this->_maxHitPoint;
-			std::cout << this->_name << " MEGA regained so MAX hitPoint, Current hitPoint: " << this->_hitPoint << std::endl;
+			std::cout << this->_name << " regained max hitPoints, Current hitPoint: " << this->_hitPoint << std::endl;
 		}
 
 	}
