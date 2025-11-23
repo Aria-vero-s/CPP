@@ -9,22 +9,19 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name, 100, 50, 20, 100) {
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "...[ScavTrap] destructor of :" << this << std::endl;
+	std::cout << "[ScavTrap] destructor of :" << this << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target){
 	if (_energyPoint <= 0 || _hitPoint <= 0)
 		std::cout << this->_name << "[ScavTrap] no more energy or hitpoint !" << std::endl;
-	else if (target == "")
-	{
+	else if (target == "") {
 		std::cout << this->_name << "[ScavTrap] cannot attack void target !" << std::endl;
 	}
-	else if (this->_attackDamage == 0)
-	{
+	else if (this->_attackDamage == 0) {
 		std::cout << this->_name << "[ScavTrap] cannot attack with 0 attackDamage !" << std::endl;
 	}
-	else
-	{
+	else {
 		this->_energyPoint--;
 		std::cout << this->_name << "[ScavTrap] attack " << target << " causing " << this->_attackDamage  << std::endl;
 	}

@@ -1,8 +1,8 @@
 #include "ClapTrap.hpp"
 
 int main (){
-	ClapTrap robot1("M. Clapi");
-	ClapTrap robot2("Mme Rainette");
+	ClapTrap robot1("RobotOne");
+	ClapTrap robot2("RobotTwo");
 
 	robot1.attack(robot2.getName());
 	

@@ -15,16 +15,13 @@ FragTrap::~FragTrap(){
 void	FragTrap::attack(const std::string& target){
 	if (_energyPoint <= 0 || _hitPoint <= 0)
 		std::cout << this->_name << "[FragTrap] no more energy or hitpoint !" << std::endl;
-	else if (target == "")
-	{
+	else if (target == "") {
 		std::cout << this->_name << "[FragTrap] cannot attack void target !" << std::endl;
 	}
-	else if (this->_attackDamage == 0)
-	{
+	else if (this->_attackDamage == 0) {
 		std::cout << this->_name << "[FragTrap] cannot attack with 0 attackDamage !" << std::endl;
 	}
-	else
-	{
+	else {
 		this->_energyPoint--;
 		std::cout << this->_name << "[FragTrap] attack " << target << " causing " << this->_attackDamage  << std::endl;
 	}

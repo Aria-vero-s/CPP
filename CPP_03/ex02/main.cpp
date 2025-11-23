@@ -3,13 +3,11 @@
 
 
 int main (){
-	ClapTrap test("test");
-	ScavTrap robot0;
-	ScavTrap robot1("M. Clapi");
-	ScavTrap robot2("Mme Rainette");
+	ScavTrap robot1("RobotOne");
+	ScavTrap robot2("RobotTwo");
 
 	robot2.takeDamage(5);
-	robot2.attack("Robot");
+	robot2.attack("RobotOne");
 
 	robot2.guardGate();
 
@@ -34,38 +32,35 @@ int main (){
 	robot3.beRepaired(5);
 	robot1.attack("");
 
-	std::cout << "---------------------FRAGTRAP TESTS---------------------" << std::endl;
+	FragTrap robot6;
+	FragTrap robot7("RobotSeven");
+	FragTrap robot8("RobotEight");
 
-	FragTrap robot10;
-	FragTrap robot11("M. Clapi");
-	FragTrap robot12("Mme Rainette");
+	robot8.takeDamage(5);
+	robot8.attack("RobotSomething");
 
-	robot12.takeDamage(5);
-	robot12.attack("Robot");
+	//robot6.guardGate();
 
-	//robot10.guardGate();
+	robot7.attack(robot8.getName());
 
-	robot11.attack(robot12.getName());
+	robot6.takeDamage(3);
+	robot6.beRepaired(2);
+	robot6.attack(robot7.getName());
 
-	robot10.takeDamage(3);
-	robot10.beRepaired(2);
-	robot10.attack(robot11.getName());
+	robot7.takeDamage(0);
+	robot7.attack(robot8.getName());
 
-	robot11.takeDamage(0);
-	robot11.attack(robot12.getName());
+	robot8.beRepaired(4294967295);
+	robot8.beRepaired(4294967295);
+	robot8.takeDamage(999999999);
 
-	robot12.beRepaired(4294967295);
-	robot12.beRepaired(4294967295);
-	robot12.takeDamage(999999999);
+	robot8.beRepaired(0);
 
-	robot12.beRepaired(0);
+	FragTrap robot9(robot8);
+	FragTrap robot10 = robot7;
 
-	FragTrap robot13(robot12);
-	FragTrap robot14 = robot11;
-
-	robot13.beRepaired(5);
-	robot11.attack("");
-	robot12.highFivesGuys();
+	robot9.beRepaired(5);
+	robot7.attack("");
+	robot8.highFivesGuys();
 	return 0;
-
 }

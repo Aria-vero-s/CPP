@@ -30,25 +30,25 @@ ClapTrap::~ClapTrap(){
 void	ClapTrap::attack(const std::string& target){
 	if (_energyPoint <= 0 || _hitPoint <= 0)
 		std::cout << this->_name << " no more energy or hitpoint !" << std::endl;
-	else if (target == "")
-	{
+	else if (target == "") {
 		std::cout << this->_name << " cannot attack void target !" << std::endl;
 	}
-	else if (this->_attackDamage == 0)
-	{
+	else if (this->_attackDamage == 0) {
 		std::cout << this->_name << " cannot attack with 0 attackDamage !" << std::endl;
 	}
-	else
-	{
+	else {
 		this->_energyPoint--;
 		std::cout << this->_name << " attack " << target << " causing " << this->_attackDamage  << std::endl;
 	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
-
-	amount < (unsigned int)this->_hitPoint ?  this->_hitPoint -= amount : this->_hitPoint = 0;
-
+	if (amount < (unsigned int)this->_hitPoint) {
+		this->_hitPoint -= amount;
+	}
+	else {
+		this->_hitPoint = 0;
+	}
 	std::cout << this->_name << " take " << amount << " damage ! Current hitPoint: " << this->_hitPoint << std::endl;
 }
 
@@ -64,7 +64,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 			this->_hitPoint += amount;
 			std::cout << this->_name << " current hitPoint: " << this->_hitPoint << std::endl;
 		}
-		else{
+		else {
 			this->_hitPoint = this->_maxHitPoint;
 			std::cout << this->_name << " MEGA regained so MAX hitPoint, Current hitPoint: " << this->_hitPoint << std::endl;
 		}
