@@ -1,10 +1,10 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(): ClapTrap("default", 100, 50, 20, 100) {
+FragTrap::FragTrap(): ClapTrap("default", 100, 100, 30, 100) {
 	std::cout << "[FragTrap] default constructor of :" << this << std::endl;
 }
 
-FragTrap::FragTrap(std::string name):ClapTrap(name, 100, 50, 20, 100) {
+FragTrap::FragTrap(std::string name):ClapTrap(name, 100, 100, 30, 100) {
 	std::cout << "[FragTrap] param constructor of :" << this << std::endl;
 }
 
