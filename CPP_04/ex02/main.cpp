@@ -8,7 +8,6 @@
 #include <iostream>
 
 int main() {
-	const Animal* meta = new Animal();
 	const Animal* i = new Cat();
 	const Animal* j = new Dog();
 	const Animal* k = new Cat(*(Cat*)i); // Copy of i
@@ -24,7 +23,6 @@ int main() {
 	i->makeSound();
 	j->makeSound();
 	k->makeSound();
-	meta->makeSound();
 
 	std::cout << std::endl;
 
@@ -33,7 +31,6 @@ int main() {
 
 	std::cout << std::endl;
 
-	delete meta;
 	delete j;
 	delete i;
 	delete k;
@@ -71,6 +68,5 @@ int main() {
 	first.showThought(39);
 
 	std::cout << std::endl;
-
 	return 0;
 }
