@@ -8,13 +8,12 @@ int main (){
 	std::cout << CYAN << std::endl;
 	robot2.takeDamage(5);
 	robot2.attack("RobotOne");
-
 	robot2.guardGate();
 
 	std::cout << RED << std::endl;
 	robot1.attack(robot2.getName());
+
 	std::cout << CYAN << std::endl;
-	
 	robot2.takeDamage(3);
 	robot2.beRepaired(2);
 	robot2.attack(robot1.getName());

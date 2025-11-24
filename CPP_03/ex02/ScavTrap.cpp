@@ -1,15 +1,15 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap("default", 100, 50, 20, 100) {
-	std::cout << "[ScavTrap] default constructor of :" << this << std::endl;
+	std::cout << "[ScavTrap] default constructor of :" << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name, 100, 50, 20, 100) {
-	std::cout << "[ScavTrap] constructor of :" << this << std::endl;
+	std::cout << "[ScavTrap] constructor of : " << _name << std::endl;
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "...[ScavTrap] destructor of :" << this << std::endl;
+	std::cout << "[ScavTrap] destructor of : " << _name << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target){
@@ -27,6 +27,6 @@ void	ScavTrap::attack(const std::string& target){
 	}
 }
 
-void	ScavTrap::guardGate(){
+void	ScavTrap::guardGate() const {
 	std::cout << "[ScavTrap] " << this->_name << " in guardGate " << std::endl;			
 }

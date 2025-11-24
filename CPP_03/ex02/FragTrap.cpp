@@ -1,15 +1,15 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(): ClapTrap("default", 100, 100, 30, 100) {
-	std::cout << "[FragTrap] default constructor of :" << this << std::endl;
+	std::cout << "[FragTrap] default constructor of : " << _name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name):ClapTrap(name, 100, 100, 30, 100) {
-	std::cout << "[FragTrap] param constructor of :" << this << std::endl;
+	std::cout << "[FragTrap] param constructor of : " << _name << std::endl;
 }
 
 FragTrap::~FragTrap(){
-	std::cout << "...[FragTrap] destructor of :" << this << std::endl;
+	std::cout << "[FragTrap] destructor of : " << _name << std::endl;
 }
 
 void	FragTrap::attack(const std::string& target){
@@ -27,6 +27,6 @@ void	FragTrap::attack(const std::string& target){
 	}
 }
 
-void	FragTrap::highFivesGuys(){
+void	FragTrap::highFivesGuys() const {
 	std::cout << "[FragTrap] " << this->_name << " request a high five !" << std::endl;			
 }
