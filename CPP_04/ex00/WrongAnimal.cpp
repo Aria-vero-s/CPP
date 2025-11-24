@@ -2,30 +2,30 @@
 #include <iostream>
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
-	std::cout << "WrongAnimal default constructor called" << std::endl;
+	std::cout << MAGENTA << "WrongAnimal" << RESET << " default constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << "WrongAnimal destructor called" << std::endl;
+	std::cout << MAGENTA << "WrongAnimal" << RESET << " destructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other) {
 	if (this != &other) {
 		type = other.type;
-		std::cout << "WrongAnimal copy constructor called" << std::endl;
+		std::cout << MAGENTA << "WrongAnimal" << RESET << " copy constructor called" << std::endl;
 	}
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
 	if (this != &other) {
-		std::cout << "WrongAnimal assignment operator called" << std::endl;
+		std::cout << MAGENTA << "WrongAnimal" << RESET << " assignment operator called" << std::endl;
 		type = other.type;
 	}
 	return *this;
 }
 
 void WrongAnimal::makeSound() const {
-	std::cout << "WrongAnimal Generic wrong animal sound " << std::endl;
+	std::cout << MAGENTA << "WrongAnimal" << RESET << BOLD << " wrong animal sound " << RESET << std::endl;
 }
 
 std::string WrongAnimal::getType() const {
