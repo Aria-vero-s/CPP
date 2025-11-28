@@ -3,33 +3,39 @@
 #include <iomanip>
 
 Brain::Brain() {
-    for (int i = 0; i < 100; ++i) {
-        std::ostringstream oss;
-        oss << "Idea " << std::setw(2) << std::setfill('0') << i;
-        _ideas[i] = oss.str();
-    }
+	int i = 0;
+	while (i < 100) {
+		std::ostringstream oss;
+		oss << "Idea " << i;
+		_ideas[i] = oss.str();
+		i++;
+	}
 }
 
 Brain::~Brain() {}
 
 Brain::Brain(const Brain& other) {
-    for (int i = 0; i < 100; ++i) {
-        _ideas[i] = other._ideas[i] + "_copy";
-    }
+	int i = 0;
+	while (i < 100) {
+		_ideas[i] = other._ideas[i];
+		i++;
+	}
 }
 
 Brain& Brain::operator=(const Brain& other) {
-    if (this != &other) {
-        for (int i = 0; i < 100; ++i) {
-            _ideas[i] = other._ideas[i] + "_assign";
-        }
-    }
-    return *this;
+	if (this != &other) {
+		int i = 0;
+		while (i < 100) {
+			_ideas[i] = other._ideas[i];
+			i++;
+		}
+	}
+	return *this;
 }
 
 std::string Brain::getIdea(int index) const {
-    if (index < 0 || index >= 100) {
-        return "Error: Index out of bounds";
-    }
-    return _ideas[index];
+	if (index < 0 || index >= 100) {
+		return "Error: Index out of bounds";
+	}
+	return _ideas[index];
 }

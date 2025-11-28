@@ -38,22 +38,33 @@ int main() {
 	std::cout << std::endl;
 
 	const Animal* animals[4];
-	for (int idx = 0; idx < 2; ++idx) {
+
+	int idx = 0;
+	while (idx < 2) {
 		animals[idx] = new Dog();
+		idx++;
 	}
-	for (int idx = 2; idx < 4; ++idx) {
+
+	while (idx < 4) {
 		animals[idx] = new Cat();
+		idx++;
 	}
 
 	std::cout << std::endl;
-	for (int idx = 0; idx < 4; ++idx) {
+
+	idx = 0;
+	while (idx < 4) {
 		std::cout << animals[idx]->getType() << " " << std::endl;
 		animals[idx]->makeSound();
+		idx++;
 	}
+
 	std::cout << std::endl;
 
-	for (int idx = 0; idx < 4; ++idx) {
+	idx = 0;
+	while (idx < 4) {
 		delete animals[idx];
+		idx++;
 	}
 
 	std::cout << std::endl;
